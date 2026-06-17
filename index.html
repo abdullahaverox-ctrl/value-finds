@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Metadata -->
+  <title>Value Finds | Curated Men's Grooming, Fragrances, Fashion & Lifestyle</title>
+  <meta name="description" content="Discover premium, value-driven recommendations on men's fragrances, grooming products, style, and lifestyle. Honest, detailed reviews with professional advice.">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Font and Stylesheets -->
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar (Affiliate Disclosure) -->
+  <div class="top-bar" id="affiliate-top-bar">
+    <span>VALUE FINDS is supported by its readers. When you buy through our links, we may earn an affiliate commission.</span>
+    <a href="#disclosure" id="top-bar-disclosure-link">Learn More</a>
+  </div>
+
+  <!-- Header / Navigation -->
+  <header class="main-header" id="main-header">
+    <div class="container nav-container">
+      <a href="#home" class="logo-wordmark" id="navbar-logo">
+        VALUE<span>FINDS</span>
+      </a>
+      
+      <!-- Mobile Nav Toggle Button -->
+      <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Toggle navigation menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="4" y1="12" x2="20" y2="12"></line>
+          <line x1="4" y1="6" x2="20" y2="6"></line>
+          <line x1="4" y1="18" x2="20" y2="18"></line>
+        </svg>
+      </button>
+
+      <!-- Main Navigation Menu -->
+      <nav class="main-nav" id="main-nav">
+        <ul>
+          <li><a href="#home" class="nav-link" id="nav-link-home">Home</a></li>
+          <li><a href="#blog" class="nav-link" id="nav-link-blog">Blog</a></li>
+          <li><a href="#about" class="nav-link" id="nav-link-about">About Us</a></li>
+          <li><a href="#contact" class="nav-link" id="nav-link-contact">Contact</a></li>
+          <li><a href="#admin-login" class="btn btn-outline btn-sm" id="nav-link-admin">Admin</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN APP ROUTER MOUNT POINT -->
+  <main>
+    
+    <!-- 1. HOME ROUTE -->
+    <section id="home" class="route-section">
+      <!-- Hero Banner -->
+      <div class="hero">
+        <div class="container">
+          <span class="hero-subtitle">Curated Style & Grooming</span>
+          <h1>Exceptional Products. Uncompromised Value.</h1>
+          <p class="hero-description">We rigorously test and review men's fragrances, grooming routines, wardrobe essentials, and lifestyle accessories to bring you the best value finds.</p>
+          <a href="#blog" class="btn btn-primary" id="hero-cta-btn">Explore Buying Guides</a>
+        </div>
+      </div>
+
+      <div class="container" style="margin-top: 4rem;">
+        <!-- Featured Products Header -->
+        <div class="section-header">
+          <div class="section-title">
+            <h2>Top Recommended Value Finds</h2>
+            <p>Our handpicked recommendations of highly-rated products that deliver maximum value.</p>
+          </div>
+          <a href="#blog" class="btn btn-outline btn-sm" id="view-all-products-link">View Reviews</a>
+        </div>
+
+        <!-- Category Tabs -->
+        <div class="category-tabs" id="home-category-tabs">
+          <button class="tab-btn active" data-category="all" id="tab-all">All Products</button>
+          <button class="tab-btn" data-category="Fragrances" id="tab-fragrances">Fragrances</button>
+          <button class="tab-btn" data-category="Grooming" id="tab-grooming">Grooming</button>
+          <button class="tab-btn" data-category="Fashion" id="tab-fashion">Fashion</button>
+          <button class="tab-btn" data-category="Lifestyle" id="tab-lifestyle">Lifestyle</button>
+        </div>
+
+        <!-- Products Grid (Dynamic Container) -->
+        <div class="products-grid" id="home-products-grid">
+          <!-- Dynamically populated via JS -->
+        </div>
+
+        <!-- Featured Section (Split Layout) -->
+        <div class="newsletter-banner" style="margin-top: 5rem;">
+          <h2>Never Miss A Premium Find</h2>
+          <p>Join our newsletter list to receive weekly digests of fragrance releases, grooming guides, and exclusive style deals.</p>
+          <form class="newsletter-form" id="newsletter-form">
+            <input type="email" class="form-control" placeholder="Enter your email address" required id="newsletter-email">
+            <button type="submit" class="btn btn-accent" id="newsletter-submit-btn">Subscribe</button>
+          </form>
+          <div class="alert-success" id="newsletter-success-alert" style="margin-top: 1rem;">
+            Welcome to Value Finds! Check your inbox soon for your first curation.
+          </div>
+        </div>
+
+        <!-- Latest Articles Header -->
+        <div class="section-header" style="margin-top: 5rem;">
+          <div class="section-title">
+            <h2>Latest Guides & Reviews</h2>
+            <p>Expert insights, comparisons, and buyers' guides compiled by our editors.</p>
+          </div>
+          <a href="#blog" class="btn btn-outline btn-sm" id="view-all-articles-link">See All Articles</a>
+        </div>
+
+        <!-- Latest Articles Grid (Dynamic Container) -->
+        <div class="articles-grid" id="home-articles-grid">
+          <!-- Dynamically populated via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. BLOG ROUTE -->
+    <section id="blog" class="route-section">
+      <div class="container">
+        <div class="section-header" style="flex-direction: column; align-items: flex-start; gap: 1rem; border-bottom: none; margin-bottom: 2rem;">
+          <h1>Our Editorial Guides</h1>
+          <p>Comprehensive reviews, grooming strategies, and curated lookbooks to level up your styling game.</p>
+        </div>
+
+        <!-- Search and Category Filter Bar -->
+        <div style="display: flex; gap: 1rem; margin-bottom: 3rem; flex-wrap: wrap; justify-content: space-between; align-items: center;">
+          <div class="category-tabs" id="blog-category-tabs" style="margin-bottom: 0;">
+            <button class="tab-btn active" data-category="all" id="blog-tab-all">All Articles</button>
+            <button class="tab-btn" data-category="Fragrances" id="blog-tab-fragrances">Fragrances</button>
+            <button class="tab-btn" data-category="Grooming" id="blog-tab-grooming">Grooming</button>
+            <button class="tab-btn" data-category="Fashion" id="blog-tab-fashion">Fashion</button>
+            <button class="tab-btn" data-category="Lifestyle" id="blog-tab-lifestyle">Lifestyle</button>
+          </div>
+          <div style="position: relative; width: 100%; max-width: 300px;">
+            <input type="text" class="form-control" placeholder="Search articles..." id="blog-search-input">
+          </div>
+        </div>
+
+        <!-- Articles Grid (Dynamic Container) -->
+        <div class="articles-grid" id="blog-articles-grid">
+          <!-- Dynamically populated via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. ARTICLE VIEW ROUTE -->
+    <section id="blog-post" class="route-section">
+      <div class="container">
+        <div class="blog-post-view" id="blog-post-detail-container">
+          <!-- Dynamically populated via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. PRODUCT VIEW ROUTE -->
+    <section id="product-detail" class="route-section">
+      <div class="container">
+        <div id="product-detail-container">
+          <!-- Dynamically populated via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. ABOUT ROUTE -->
+    <section id="about" class="route-section">
+      <div class="container">
+        <div class="about-grid">
+          <div>
+            <span class="hero-subtitle">Who We Are</span>
+            <h2 style="font-size: 2.25rem; margin-bottom: 1.5rem;">Curation Driven by Quality, Value, & Passion</h2>
+            <p style="margin-bottom: 1rem; font-size: 1.05rem;">At <strong>Value Finds</strong>, we believe that leveling up your grooming, style, and personal fragrance shouldn't require emptying your bank account. The marketplace is saturated with overpriced brand names and low-quality knockoffs. We exist in the sweet spot: helping you find premium quality at sensible price tags.</p>
+            <p style="margin-bottom: 1.5rem; font-size: 1.05rem;">Our editors test everything from niche fragrance clones to heavy-knit cotton t-shirts, reviewing them objectively. We only recommend products we've personally inspected, worn, or used.</p>
+            <a href="#contact" class="btn btn-primary" id="about-contact-btn">Get In Touch</a>
+          </div>
+          <div class="about-image">
+            <!-- Representing a high-end grooming/lifestyle display -->
+            <img src="https://images.unsplash.com/photo-1522337360788-8b13edd793be?w=800&auto=format&fit=crop&q=80" alt="Men's grooming essentials display" id="about-display-img">
+          </div>
+        </div>
+
+        <div class="about-features">
+          <div class="feature-box">
+            <div class="feature-icon">🔍</div>
+            <h3>Meticulous Testing</h3>
+            <p>We wear, spray, wash, and style every recommendation to evaluate longevity and true cost-per-wear.</p>
+          </div>
+          <div class="feature-box">
+            <div class="feature-icon">🤝</div>
+            <h3>Honest Transparency</h3>
+            <p>We declare all affiliate relationships. If a product fails to meet our standards, we say so—no exceptions.</p>
+          </div>
+          <div class="feature-box">
+            <div class="feature-icon">💎</div>
+            <h3>True Value Focus</h3>
+            <p>Our focus isn't just on "cheap" items. We find products that punch way above their weight class in quality.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. CONTACT ROUTE -->
+    <section id="contact" class="route-section">
+      <div class="container">
+        <div class="contact-container">
+          <!-- Contact Info Pane -->
+          <div class="contact-info-panel">
+            <div>
+              <h2>Let's Connect</h2>
+              <p>Have a product you want us to review, or interested in a collaboration? Fill out the form, and our editorial team will get back to you.</p>
+            </div>
+            
+            <ul class="contact-list">
+              <li class="contact-item">
+                <span class="contact-icon">📧</span>
+                <div>
+                  <h4>Email Us</h4>
+                  <p>valuefindsoffical@gmail.com</p>
+                </div>
+              </li>
+              <li class="contact-item">
+                <span class="contact-icon">📍</span>
+                <div>
+                  <h4>Location</h4>
+                  <p>New York City, NY</p>
+                </div>
+              </li>
+              <li class="contact-item">
+                <span class="contact-icon">🕒</span>
+                <div>
+                  <h4>Business Hours</h4>
+                  <p>Mon - Fri: 9:00 AM - 5:00 PM EST</p>
+                </div>
+              </li>
+            </ul>
+
+            <div style="font-size: 0.85rem; color: rgba(255,255,255,0.4);">
+              &copy; Value Finds Editorial Team
+            </div>
+          </div>
+
+          <!-- Contact Form Pane -->
+          <div class="contact-form-panel">
+            <div class="alert-success" id="contact-success-alert">
+              Thank you! Your message has been sent. An editor will reply shortly.
+            </div>
+            
+            <form id="contact-form">
+              <div class="grid-2col">
+                <div class="form-group">
+                  <label for="contact-name">Full Name</label>
+                  <input type="text" id="contact-name" class="form-control" required placeholder="John Doe">
+                </div>
+                <div class="form-group">
+                  <label for="contact-email">Email Address</label>
+                  <input type="email" id="contact-email" class="form-control" required placeholder="john@example.com">
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="contact-subject">Subject</label>
+                <select id="contact-subject" class="form-control" required>
+                  <option value="" disabled selected>Select an option</option>
+                  <option value="Product Review Suggestion">Product Review Suggestion</option>
+                  <option value="Advertising & Sponsorship">Advertising / Sponsorship</option>
+                  <option value="Feedback">General Feedback</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-message">Your Message</label>
+                <textarea id="contact-message" class="form-control" required placeholder="Detail your request..."></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-full" id="contact-submit-btn">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. LEGAL - PRIVACY POLICY -->
+    <section id="privacy" class="route-section">
+      <div class="container">
+        <div class="legal-content">
+          <h1>Privacy Policy</h1>
+          <div class="last-updated">Last Updated: June 17, 2026</div>
+          <p>At Value Finds, we respect your privacy and are committed to protecting any personal data we collect. This Privacy Policy details how we collect, use, and share information when you visit our website.</p>
+          
+          <h2>1. Information We Collect</h2>
+          <p>We collect information you provide directly to us, such as when you subscribe to our newsletter, complete our contact form, or interact with other features. This may include your name, email address, and message contents.</p>
+          <p>Additionally, we collect certain log and usage information automatically through cookies and tracking tools to evaluate analytics, page speeds, and user interactions. This includes IP address, browser type, referral URLs, and pages visited.</p>
+          
+          <h2>2. How We Use Information</h2>
+          <p>We use the collected information to:</p>
+          <ul>
+            <li>Deliver newsletter updates and product recommendations.</li>
+            <li>Respond to your emails, comments, or business inquiries.</li>
+            <li>Maintain, analyze, and optimize website performance and user interface.</li>
+            <li>Process affiliate links and track referral traffic in accordance with marketing programs.</li>
+          </ul>
+
+          <h2>3. Cookies & Tracking Technologies</h2>
+          <p>We use cookies to analyze web traffic and deliver personalized experiences. Our third-party affiliate networks (such as Amazon Associates) may also use cookies to track purchases you make after clicking our outbound links, ensuring we receive the appropriate commission.</p>
+
+          <h2>4. Third-Party Sharing</h2>
+          <p>We do not sell, trade, or rent your personal information to third parties. We share data only with trusted service providers who assist us in running our email newsletter or analyzing web traffic, and when required by law.</p>
+
+          <h2>5. Contact Us</h2>
+          <p>If you have questions about this policy, please reach out to us via our <a href="#contact" style="color: var(--color-accent-dark); font-weight:600;">Contact Page</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. LEGAL - TERMS & CONDITIONS -->
+    <section id="terms" class="route-section">
+      <div class="container">
+        <div class="legal-content">
+          <h1>Terms & Conditions</h1>
+          <div class="last-updated">Last Updated: June 17, 2026</div>
+          <p>Welcome to Value Finds. By accessing and browsing this website, you agree to comply with and be bound by the following terms and conditions of use.</p>
+
+          <h2>1. Use of Content</h2>
+          <p>All content published on this website—including articles, reviews, copy, design systems, layouts, and graphics—is the intellectual property of Value Finds. You may not copy, reproduce, or republish our editorial materials without express written authorization.</p>
+
+          <h2>2. Disclaimers</h2>
+          <p>Our reviews reflect the subjective opinions of our editorial staff. While we aim to provide accurate and up-to-date information on prices, specs, and stock availability, we make no guarantees about the accuracy or completeness of any data on this website.</p>
+          <p>Any product claim, statistic, quote, or other representation about a product should be verified directly with the manufacturer or retailer.</p>
+
+          <h2>3. Affiliate Link Disclaimers</h2>
+          <p>Value Finds participates in various affiliate marketing programs. Clicking on links to merchant sites and purchasing products will result in a commission credited to us. This does not change the price you pay, and does not bias our reviews.</p>
+
+          <h2>4. Limitation of Liability</h2>
+          <p>Under no circumstances shall Value Finds or its owners be liable for any loss, damage, or health reaction caused by your reliance on information published here or your usage of products recommended here (such as skin reactions to grooming items or fragrances).</p>
+
+          <h2>5. Changes to Terms</h2>
+          <p>We reserve the right to revise these terms at any time. Your continued use of the website following changes indicates your acceptance of the updated terms.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. LEGAL - AFFILIATE DISCLOSURE -->
+    <section id="disclosure" class="route-section">
+      <div class="container">
+        <div class="legal-content">
+          <h1>Affiliate Disclosure</h1>
+          <div class="last-updated">Last Updated: June 17, 2026</div>
+          <p>Transparency is fundamental to our relationship with our audience. We believe in complete openness regarding how this website is monetized.</p>
+          
+          <h2>How We Make Money</h2>
+          <p>Value Finds is a participant in affiliate advertising programs. This means that we link to products on retail websites (like Amazon, FragranceNet, Sephora, Nordstrom, etc.). When you click those links and make a purchase, we receive a small percentage of the sales price as a commission from the merchant.</p>
+          
+          <h2>Does It Cost You Extra?</h2>
+          <p><strong>No.</strong> The price of the product is exactly the same whether you buy it via our affiliate link or go directly to the merchant's store. There are no added markups or fees.</p>
+
+          <h2>Does It Affect Our Reviews?</h2>
+          <p><strong>Absolutely not.</strong> Our goal is to identify the best values on the market. If we recommend a low-quality, overpriced product just to earn a commission, we would lose your trust—which is our most valuable asset. We highlight pros and cons honestly, and if a product isn't worth the money, we make sure to point that out.</p>
+
+          <h2>Amazon Associate Disclosure</h2>
+          <p>As an Amazon Associate, Value Finds earns from qualifying purchases. Amazon and the Amazon logo are trademarks of Amazon.com, Inc. or its affiliates.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. ADMIN LOGIN -->
+    <section id="admin-login" class="route-section">
+      <div class="container">
+        <div class="admin-login-card">
+          <h2>Admin Portal</h2>
+          <p>Sign in to manage blog posts and affiliate products.</p>
+          
+          <div class="error-message" id="login-error-msg">
+            Incorrect passcode. Please try again.
+          </div>
+          
+          <form id="admin-login-form">
+            <div class="form-group" style="text-align: left;">
+              <label for="admin-passcode">Admin Passcode</label>
+              <input type="password" id="admin-passcode" class="form-control" placeholder="Enter password (default: admin123)" required>
+            </div>
+            
+            <button type="submit" class="btn btn-primary btn-full" id="login-submit-btn">Authenticate</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. ADMIN DASHBOARD -->
+    <section id="admin-dashboard" class="route-section">
+      <div class="container">
+        
+        <!-- Dashboard Header -->
+        <div class="admin-header-bar">
+          <div>
+            <h2>Admin Content Dashboard</h2>
+            <p style="font-size: 0.9rem;">Add, edit, or delete items instantly. Changes persist locally.</p>
+          </div>
+          <div class="admin-user-info">
+            <span class="admin-user-badge">Owner Mode</span>
+            <button class="btn btn-outline btn-sm" id="admin-logout-btn">Log Out</button>
+          </div>
+        </div>
+
+        <!-- Section Navigation tabs -->
+        <div class="admin-tabs">
+          <button class="admin-tab-btn active" data-pane="pane-posts" id="btn-pane-posts">Blog Articles</button>
+          <button class="admin-tab-btn" data-pane="pane-products" id="btn-pane-products">Affiliate Products</button>
+        </div>
+
+        <!-- PANE 1: BLOG POSTS -->
+        <div class="admin-pane active" id="pane-posts">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+            <h3>Manage Articles</h3>
+            <button class="btn btn-accent btn-sm" id="btn-new-post">Add New Article</button>
+          </div>
+          
+          <div class="admin-table-container">
+            <table class="admin-table" id="admin-posts-table">
+              <thead>
+                <tr>
+                  <th>Cover</th>
+                  <th>Title</th>
+                  <th>Category</th>
+                  <th>Date</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="admin-posts-tbody">
+                <!-- Dynamically filled via JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- PANE 2: PRODUCTS -->
+        <div class="admin-pane" id="pane-products">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+            <h3>Manage Products</h3>
+            <button class="btn btn-accent btn-sm" id="btn-new-product">Add New Product</button>
+          </div>
+          
+          <div class="admin-table-container">
+            <table class="admin-table" id="admin-products-table">
+              <thead>
+                <tr>
+                  <th>Thumbnail</th>
+                  <th>Name</th>
+                  <th>Brand</th>
+                  <th>Category</th>
+                  <th>Rating</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="admin-products-tbody">
+                <!-- Dynamically filled via JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 12. CUSTOM 404 PAGE -->
+    <section id="not-found" class="route-section">
+      <div class="container text-center" style="max-width: 600px; padding: 4rem 1.5rem;">
+        <div style="font-size: 6rem; line-height: 1; font-weight: 800; margin-bottom: 1rem; color: var(--color-accent); font-family: var(--font-display);">404</div>
+        <h2 style="margin-bottom: 1rem; font-size: 2.25rem;">Lost in Transit?</h2>
+        <p style="margin-bottom: 2.5rem; font-size: 1.1rem; color: var(--color-text-muted);">The review or styling guide you are looking for doesn't exist or has moved. Let's get you back on track.</p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="#home" class="btn btn-primary" id="btn-404-home">Go to Home Catalog</a>
+          <a href="#blog" class="btn btn-outline" id="btn-404-blog">Browse Blog Guides</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- MODAL OVERLAY FOR POST EDITOR -->
+  <div class="modal-overlay" id="post-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="post-modal-title">Create Article</h3>
+        <button class="close-modal-btn" id="close-post-modal" aria-label="Close modal">&times;</button>
+      </div>
+      <form id="post-editor-form">
+        <input type="hidden" id="edit-post-id">
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="post-title">Article Title</label>
+            <input type="text" id="post-title" class="form-control" required placeholder="e.g., The 5 Best Fragrances For Men Under $50">
+          </div>
+          <div class="grid-2col">
+            <div class="form-group">
+              <label for="post-category">Category</label>
+              <select id="post-category" class="form-control" required>
+                <option value="Fragrances">Fragrances</option>
+                <option value="Grooming">Grooming</option>
+                <option value="Fashion">Fashion</option>
+                <option value="Lifestyle">Lifestyle</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="post-readtime">Estimated Read Time (minutes)</label>
+              <input type="number" id="post-readtime" class="form-control" required min="1" max="60" value="5">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="post-image">Cover Image URL</label>
+            <input type="url" id="post-image" class="form-control" required placeholder="e.g., https://images.unsplash.com/...">
+          </div>
+          <div class="form-group">
+            <label for="post-excerpt">Short Excerpt (shows in feed cards)</label>
+            <textarea id="post-excerpt" class="form-control" required placeholder="Brief meta description summary..." maxlength="200"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="post-content">Full Body Content (HTML / Plaintext supported)</label>
+            <textarea id="post-content" class="form-control" required placeholder="Write details here. Use heading tags <h2> for sections..." style="min-height: 250px;"></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline btn-sm" id="cancel-post-btn">Cancel</button>
+          <button type="submit" class="btn btn-primary btn-sm" id="save-post-btn">Save Article</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL OVERLAY FOR PRODUCT EDITOR -->
+  <div class="modal-overlay" id="product-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="product-modal-title">Add Affiliate Product</h3>
+        <button class="close-modal-btn" id="close-product-modal" aria-label="Close modal">&times;</button>
+      </div>
+      <form id="product-editor-form">
+        <input type="hidden" id="edit-product-id">
+        <div class="modal-body">
+          <div class="grid-2col">
+            <div class="form-group">
+              <label for="product-name">Product Name</label>
+              <input type="text" id="product-name" class="form-control" required placeholder="e.g., Club de Nuit Intense Man">
+            </div>
+            <div class="form-group">
+              <label for="product-brand">Brand Name</label>
+              <input type="text" id="product-brand" class="form-control" required placeholder="e.g., Armaf">
+            </div>
+          </div>
+          
+          <div class="grid-2col">
+            <div class="form-group">
+              <label for="product-category">Category</label>
+              <select id="product-category" class="form-control" required>
+                <option value="Fragrances">Fragrances</option>
+                <option value="Grooming">Grooming</option>
+                <option value="Fashion">Fashion</option>
+                <option value="Lifestyle">Lifestyle</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="product-price">Price Guide (e.g., $35 or $$, $$$)</label>
+              <input type="text" id="product-price" class="form-control" required placeholder="e.g., $35">
+            </div>
+          </div>
+
+          <div class="grid-2col">
+            <div class="form-group">
+              <label for="product-rating">Rating (1 to 5 Stars)</label>
+              <input type="number" id="product-rating" class="form-control" required min="1" max="5" step="0.1" value="4.5">
+            </div>
+            <div class="form-group">
+              <label for="product-badge">Card Badge / Tag (Optional)</label>
+              <input type="text" id="product-badge" class="form-control" placeholder="e.g., Best Value, Editor's Choice">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="product-image">Image URL</label>
+            <input type="url" id="product-image" class="form-control" required placeholder="e.g., https://images.unsplash.com/...">
+          </div>
+          
+          <div class="form-group">
+            <label for="product-aff-link">Affiliate Referral Link URL</label>
+            <input type="url" id="product-aff-link" class="form-control" required placeholder="e.g., https://amazon.com/... or outbound affiliate path">
+          </div>
+
+          <div class="form-group">
+            <label for="product-desc">Editorial Review / Description</label>
+            <textarea id="product-desc" class="form-control" required placeholder="Provide your hands-on experience and rating reasoning..."></textarea>
+          </div>
+
+          <!-- Pros and Cons -->
+          <div class="pros-cons-grid">
+            <div class="pro-con-input-group">
+              <span class="pro-con-tag pro">Pros (One per line)</span>
+              <textarea id="product-pros" class="form-control" placeholder="Long-lasting projection&#10;Highly versatile scent profile&#10;Incredible pricing" style="min-height: 80px; font-size: 0.85rem;"></textarea>
+            </div>
+            <div class="pro-con-input-group">
+              <span class="pro-con-tag con">Cons (One per line)</span>
+              <textarea id="product-cons" class="form-control" placeholder="Harsh synthetic opening&#10;Heavy bottle design" style="min-height: 80px; font-size: 0.85rem;"></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline btn-sm" id="cancel-product-btn">Cancel</button>
+          <button type="submit" class="btn btn-primary btn-sm" id="save-product-btn">Save Product</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- UNIVERSAL FOOTER -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>VALUE<span>FINDS</span></h3>
+          <p>The premier editorial catalog dedicated to tracking quality style, grooming, and fragrance choices that punch far above their retail price bracket.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="#home">Home Dashboard</a></li>
+            <li><a href="#blog">Editorial Blog</a></li>
+            <li><a href="#about">About Our Vision</a></li>
+            <li><a href="#contact">Contact the Editors</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Privacy & Legal</h4>
+          <ul>
+            <li><a href="#privacy">Privacy Policy</a></li>
+            <li><a href="#terms">Terms & Conditions</a></li>
+            <li><a href="#disclosure">Affiliate Disclosure</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Detailed Legal Disclosure -->
+      <div class="footer-disclosure">
+        <strong>Disclaimer:</strong> Value Finds is a participant in the Amazon Services LLC Associates Program and other retail affiliate programs, designed to provide a means for sites to earn advertising fees by advertising and linking to online storefronts. Products reviewed are purchased by editors or provided as press samples. Reviews represent independent, unbiased editorial opinions.
+      </div>
+      
+      <div class="footer-bottom">
+        <div>&copy; 2026 Value Finds. All rights reserved. Built with premium Vanilla web architecture.</div>
+        <div class="footer-legal-links">
+          <a href="#privacy">Privacy</a>
+          <a href="#terms">Terms</a>
+          <a href="#disclosure">Disclosure</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Core JavaScript Application -->
+  <script src="app.js" defer></script>
+</body>
+</html>
