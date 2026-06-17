@@ -290,7 +290,7 @@ class DataStore {
   }
 
   static loginAdmin(passcode) {
-    if (passcode === "admin123") {
+    if (passcode === "Eagle12695++") {
       sessionStorage.setItem("vf_admin_auth", "true");
       return true;
     }
